@@ -1,0 +1,4 @@
+1. Try sending requests with different user IDs - notice any timing differences?
+2. The server only computes slow hashes for valid users
+3. Python's hmac.compare_digest() prevents timing leaks
+4. Always perform ALL cryptographic operations before returning
