@@ -28,7 +28,65 @@ docker-compose up --build
 - Identify and exploit timing side-channels
 - Learn constant-time coding techniques
 - Understand authentication security best practices
+- 
+Key Enhancements:
+Concurrent Testing:
 
+Uses ThreadPoolExecutor to test multiple user IDs simultaneously
+
+Dramatically reduces total execution time
+
+Statistical Analysis:
+
+Uses Median Absolute Deviation (MAD) to automatically detect anomalies
+
+Configurable threshold for identifying valid users
+
+Improved Brute-Force:
+
+Checks common PINs first before full brute-force
+
+Implements chunked brute-forcing with progress tracking
+
+Also uses concurrent requests for PIN testing
+
+Better Visualization:
+
+Highlights potential valid users in red
+
+Shows threshold line for anomaly detection
+
+Saves plot to file
+
+Error Handling:
+
+More robust error handling for network issues
+
+Timeouts to prevent hanging
+
+Progress Tracking:
+
+Uses tqdm for progress bars during both phases
+
+Shows elapsed time for complete attack
+
+Results Saving:
+
+Saves successful credentials to JSON file
+
+Includes timestamp and authentication token
+
+Configuration:
+
+All important parameters are configurable at the top
+
+Easy to adjust for different scenarios
+
+Modular Design:
+
+Separated into logical functions for better maintainability
+
+Each phase can be run independently if needed
 See `hint.txt` for help!
 [![Ask AI Agent](https://img.shields.io/badge/Ask%20AI-Agent-blue)](https://huggingface.co/chat?repo=your-repo)
 #### my_streaming_software
