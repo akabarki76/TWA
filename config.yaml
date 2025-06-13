@@ -1,0 +1,17 @@
+# docker-compose.yml
+version: "3.8"
+services:
+  vulnerable:
+    build: .
+    ports: ["5000:5000"]
+    environment:
+      - MODE=vulnerable
+  fixed:
+    build: .
+    ports: ["5001:5000"]
+    command: ["python", "solution.py"]
+  attacker:
+    build: .
+    command: ["python", "hack.py"]
+    depends_on:
+      - vulnerable
